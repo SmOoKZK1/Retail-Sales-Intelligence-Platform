@@ -1,0 +1,52 @@
+---------------------------------------------------------
+-- RETAIL SALES INTELLIGENCE: DAX MEASURES
+-- Create a new table called '_Key Measures' in Power BI 
+-- and add these formulas using the "New Measure" button.
+---------------------------------------------------------
+
+// 1. Core Revenue & Profit
+Total Revenue = SUM(fact_sales[sales])
+
+Total Profit = SUM(fact_sales[profit])
+
+Total Quantity Sold = SUM(fact_sales[quantity])
+
+// 2. Performance Metrics
+Profit Margin % = 
+    DIVIDE(
+        [Total Profit], 
+        [Total Revenue], 
+        0
+    )
+
+Average Discount = AVERAGE(fact_sales[discount])
+
+// 3. Time Intelligence (Requires a Date Table)
+// Note: Mark your Date table as a 'Date Table' in Power BI for these to work.
+YTD Revenue = 
+    TOTALYTD(
+        [Total Revenue], 
+        'Date'[Date]
+    )
+
+Previous Year Revenue = 
+    CALCULATE(
+        [Total Revenue], 
+        SAMEPERIODLASTYEAR('Date'[Date])
+    )
+
+YoY Revenue Growth % = 
+    DIVIDE(
+        [Total Revenue] - [Previous Year Revenue], 
+        [Previous Year Revenue], 
+        0
+    )
+
+// 4. Conditional Formatting / Dynamic Title (Optional Pro-Tip)
+Dynamic Dashboard Title = 
+    "Sales Performance for " & 
+    IF(
+        ISFILTERED(dim_region[region]), 
+        SELECTEDVALUE(dim_region[region]), 
+        "All Regions"
+    )
