@@ -62,8 +62,6 @@ retail-sales-intelligence/
 4. Load data into the database
 5. Connect Power BI to the database and build dashboards
 
-## 📸 Dashboard Preview
-(Add your dashboard screenshot here)
 
 ## 📌 Conclusion
 This project demonstrates how raw data can be transformed into meaningful insights using end-to-end data analytics workflows. It reflects real-world responsibilities of Data Analysts and BI professionals in transforming business data into actionable intelligence.
