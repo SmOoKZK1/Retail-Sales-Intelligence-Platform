@@ -1,49 +1,69 @@
 # 📊 Retail Sales Intelligence Platform
 
 ## 📌 Overview
-This project is an end-to-end Business Intelligence solution designed to analyze retail sales data and generate actionable insights for business decision-making.
+This project is an end-to-end Business Intelligence solution designed to analyze retail sales data and generate actionable insights for business decision-making. It simulates a real-world analytics workflow involving data extraction, transformation, modeling, and visualization.
+
+## 🎯 Business Problem
+Retail businesses often struggle to identify high-performing products, track regional sales performance, understand customer purchasing behavior, and improve profitability. Without structured analytics, decision-making becomes inefficient and reactive.
+
+## 💡 Solution
+Developed a data-driven BI platform that processes raw sales data using ETL pipelines, structures it into a star schema model, and visualizes key metrics using Power BI dashboards. The solution enables stakeholders to monitor performance and make informed decisions.
 
 ## 🧱 Architecture
-Raw Data → ETL (Python) → SQL Database → Data Modeling → Power BI Dashboard
+Raw Data → ETL (Python) → SQL Database → Data Modeling (Star Schema) → Power BI Dashboard → Business Insights
 
 ## ⚙️ Tech Stack
-- Python (Pandas)
+- Python (Pandas, NumPy)
 - SQL (MySQL/PostgreSQL)
-- Power BI
+- Power BI (Dashboard & Visualization)
 - Data Modeling (Star Schema)
 
 ## 🔄 ETL Pipeline
-- Cleaned and transformed raw data using Python
+- Extracted raw retail dataset (CSV format)
+- Cleaned and transformed data using Python (handling duplicates, formatting dates, and missing values)
 - Created derived metrics such as Profit Margin
-- Loaded structured data into relational database
+- Loaded structured data into a relational database for analysis
 
-## 📊 Key Insights
-- Identified top-performing regions and product categories
-- Analyzed customer purchasing behavior
-- Detected low-profit segments affecting revenue
+## 🧩 Data Model
+- Fact Table: Sales transactions
+- Dimension Tables: Customer, Product, Region
+- Schema Type: Star Schema  
+This structure improves query performance and enables efficient reporting.
 
-## 📈 Dashboard Features
-- Revenue & Profit KPIs
-- Sales by Region & Category
-- Monthly Trends
-- Top Customers
-- Interactive filters
+## 📊 Dashboard Features
+- Revenue and Profit KPIs
+- Sales by Category and Region
+- Monthly Sales Trends
+- Top Customers Analysis
+- Interactive filters and drilldowns for detailed insights
+
+## 📈 Key Insights
+- Technology category generated the highest revenue but comparatively lower profit margins
+- West region contributed the largest share of total sales
+- A small percentage of customers contributed a significant portion of revenue
+- Certain product categories showed high sales but low profitability, indicating optimization opportunities
 
 ## 🚀 Business Value
-Helps stakeholders:
-- Improve profitability
-- Optimize product strategy
-- Make data-driven decisions
+This solution helps stakeholders identify profitable and loss-making segments, optimize product and pricing strategies, and make data-driven decisions through clear and interactive dashboards.
 
-## 📂 Folder Structure
-- data/ → raw & processed datasets
-- etl/ → Python pipeline
-- sql/ → schema & queries
-- dashboard/ → Power BI file
+## 📂 Project Structure
+retail-sales-intelligence/  
+├── data/  
+├── etl/  
+├── sql/  
+├── dashboard/  
+├── README.md  
+└── requirements.txt  
 
-## 📎 How to Run
+## ▶️ How to Run
 1. Place dataset in `data/raw/`
-2. Run ETL script
-3. Create tables using `schema.sql`
-4. Load data
-5. Connect Power BI
+2. Run the ETL pipeline using: python etl/etl_pipeline.py
+3. Create database tables using `schema.sql`
+4. Load data into the database
+5. Connect Power BI to the database and build dashboards
+
+## 📸 Dashboard Preview
+(Add your dashboard screenshot here)
+
+## 📌 Conclusion
+This project demonstrates how raw data can be transformed into meaningful insights using end-to-end data analytics workflows. It reflects real-world responsibilities of Data Analysts and BI professionals in transforming business data into actionable intelligence.
